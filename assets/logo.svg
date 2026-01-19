@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="240" height="64" viewBox="0 0 240 64" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title">
+  <title id="title">nexa-digital-solutions</title>
+  <defs>
+    <linearGradient id="g" x1="0" x2="1">
+      <stop offset="0" stop-color="#0b63d6"/>
+      <stop offset="1" stop-color="#00b4ff"/>
+    </linearGradient>
+    <style>
+      .brand-text{font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; font-weight:700; font-size:18px; fill:#0f1724}
+      .tagline{font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; font-size:12px; fill:#6b7280}
+    </style>
+  </defs>
+
+  <!-- Mark / icon -->
+  <rect x="4" y="4" width="56" height="56" rx="12" fill="url(#g)"/>
+  <path d="M22 44 L34 20 L28 20 L23 33 L18 20 L12 20 L22 44 Z" fill="white"/>
+
+  <!-- Text -->
+  <g transform="translate(72,18)">
+    <text class="brand-text">nexa-digital-solutions</text>
+    <text class="tagline" y="20">Soluções digitais e desenvolvimento web</text>
+  </g>
+</svg>

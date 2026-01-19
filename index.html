@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>nexa-digital-solutions</title>
+  <meta name="description" content="nexa-digital-solutions — soluções digitais e desenvolvimento web." />
+  <link rel="icon" href="/favicon.ico" />
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <header class="header" role="banner">
+      <div class="brand" style="display:flex;align-items:center;gap:16px">
+        <img src="assets/logo.svg" alt="Logo nexa-digital-solutions">
+        <div>
+          <h1>nexa-digital-solutions</h1>
+          <div class="tag">Soluções digitais e desenvolvimento web</div>
+        </div>
+      </div>
+
+      <nav role="navigation" aria-label="Menu principal">
+        <a href="#home">Home</a>
+        <a href="#servicos">Serviços</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#contato">Contato</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="card hero" id="home" aria-labelledby="hero-title">
+        <div class="hero-left">
+          <h2 id="hero-title">Transformamos ideias em produtos digitais de alto impacto</h2>
+          <p style="color:var(--muted)">Na nexa-digital-solutions desenvolvemos sites e aplicações customizadas, com foco em experiência do usuário, performance e resultados de negócio.</p>
+          <p style="margin-top:18px">
+            <a class="cta" href="#contato">Solicitar orçamento</a>
+          </p>
+        </div>
+
+        <div class="hero-right" aria-hidden="true">
+          <div style="background:linear-gradient(180deg,#eef6ff,#ffffff);border-radius:10px;padding:20px;text-align:center;color:var(--accent)">
+            <strong>Design &amp; Desenvolvimento</strong>
+            <div style="color:var(--muted);margin-top:8px">Protótipos, front-end moderno e arquitetura escalável</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="card" style="margin-top:20px" id="servicos" aria-labelledby="servicos-title">
+        <h3 id="servicos-title">Serviços</h3>
+        <ul class="services-list" aria-label="Lista de serviços">
+          <li>
+            <strong>Desenvolvimento web</strong>
+            <div style="color:var(--muted);margin-top:6px">Sites corporativos, landing pages e aplicações SPA com foco em performance.</div>
+          </li>
+          <li>
+            <strong>UX/UI e prototipagem</strong>
+            <div style="color:var(--muted);margin-top:6px">Design centrado no usuário, protótipos interativos e testes de usabilidade.</div>
+          </li>
+          <li>
+            <strong>Consultoria técnica</strong>
+            <div style="color:var(--muted);margin-top:6px">Arquitetura, escalabilidade e orientação para escolha de pilhas tecnológicas.</div>
+          </li>
+        </ul>
+      </section>
+
+      <section class="card about-grid" id="sobre" style="margin-top:20px" aria-labelledby="sobre-title">
+        <div>
+          <h3 id="sobre-title">Sobre nós</h3>
+          <p>Somos um time de desenvolvedores e designers apaixonados por transformar problemas em soluções digitais claras e escaláveis. Trabalhamos em estreita colaboração com clientes para entender necessidades e entregar produtos com impacto real.</p>
+
+          <h4 style="margin-top:12px">Nosso processo</h4>
+          <ol style="color:var(--muted)">
+            <li>Diagnóstico e definição de objetivos</li>
+            <li>Design e prototipagem</li>
+            <li>Desenvolvimento e testes</li>
+            <li>Entrega e suporte contínuo</li>
+          </ol>
+        </div>
+
+        <aside class="about-card" aria-label="Diferenciais">
+          <h4>Diferenciais</h4>
+          <ul style="color:var(--muted)">
+            <li>Entrega com atenção à performance</li>
+            <li>UX-driven: protótipos validados</li>
+            <li>Suporte e documentação prática</li>
+          </ul>
+        </aside>
+      </section>
+
+      <section class="card" style="margin-top:20px" id="contato" aria-labelledby="contato-title">
+        <h3 id="contato-title">Contato</h3>
+        <p style="color:var(--muted)">Preencha o formulário e nós retornamos em até 2 dias úteis.</p>
+
+        <form id="contactForm" novalidate>
+          <input type="text" id="nome" name="nome" placeholder="Seu nome" required>
+          <input type="email" id="email" name="email" placeholder="Seu e-mail" required>
+          <textarea id="mensagem" name="mensagem" placeholder="Como podemos ajudar?" required></textarea>
+
+          <div class="form-actions">
+            <button type="submit" class="cta">Enviar mensagem</button>
+            <div id="formMsg" class="msg-success" role="status" aria-live="polite">Mensagem enviada com sucesso! — Em breve entraremos em contato.</div>
+          </div>
+        </form>
+
+        <div style="margin-top:12px;color:var(--muted)">
+          Ou envie um e-mail diretamente para <a href="mailto:contato@nexa-digital-solutions.com">contato@nexa-digital-solutions.com</a>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      © <span id="year"></span> nexa-digital-solutions — Todos os direitos reservados.
+    </footer>
+  </div>
+
+  <script>
+    // Atualiza ano no rodapé
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Validação simples do formulário e feedback visual (frontend apenas)
+    const form = document.getElementById('contactForm');
+    const formMsg = document.getElementById('formMsg');
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      formMsg.style.display = 'none';
+
+      const nome = document.getElementById('nome').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const mensagem = document.getElementById('mensagem').value.trim();
+
+      if (!nome || !email || !mensagem) {
+        alert('Por favor, preencha todos os campos.');
+        return;
+      }
+
+      // Simula envio (substitua por fetch() para integrar com backend)
+      setTimeout(() => {
+        form.reset();
+        formMsg.style.display = 'block';
+        // esconder a mensagem após 5s
+        setTimeout(() => formMsg.style.display = 'none', 5000);
+      }, 700);
+    });
+  </script>
+</body>
+</html>
